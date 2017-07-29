@@ -6,6 +6,9 @@ public class AnimalController : MonoBehaviour {
     public Vector3 StopRotatingVector;
     public bool ControlledByPlayer;
     private Vector3 _moveDirection = Vector3.zero;
+    public string Horizontal = "Horizontal_P1";
+    public string Vertical = "Vertical_P1";
+    public string AttackButton = "Jump_P1";
 
     void Update() {
         if (!ControlledByPlayer) return;
@@ -17,8 +20,8 @@ public class AnimalController : MonoBehaviour {
             forward.y = 0;
             forward = forward.normalized;
             Vector3 right = new Vector3(forward.z, 0, -forward.x);
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
+            float h = Input.GetAxis(Horizontal);
+            float v = Input.GetAxis(Vertical);
 
             _moveDirection = (h * right + v * forward);
             _moveDirection *= Speed;
@@ -27,9 +30,9 @@ public class AnimalController : MonoBehaviour {
         _moveDirection.y -= Time.deltaTime;
         controller.Move(_moveDirection * Time.deltaTime);
 
-        Vector3 facingrotation = Vector3.Normalize(new Vector3(Input.GetAxis("Horizontal"),
+        Vector3 facingrotation = Vector3.Normalize(new Vector3(Input.GetAxis(Horizontal),
             0f,
-            Input.GetAxis("Vertical")));
+            Input.GetAxis(Vertical)));
 
         if (facingrotation != StopRotatingVector)
         {
