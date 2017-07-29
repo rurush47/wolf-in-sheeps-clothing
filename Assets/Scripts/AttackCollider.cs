@@ -6,8 +6,9 @@ public class AttackCollider : MonoBehaviour
 {
 
 	private BoxCollider _collider;
-	public AnimalController AnimalController;
+	public Wolf AnimalController;
 	private bool _attack;
+	
 	
 	void Start ()
 	{
@@ -23,9 +24,11 @@ public class AttackCollider : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.gameObject.CompareTag("Owca") && _attack)
+		if (/*other.gameObject.CompareTag("Owca") &&*/ _attack)
 		{
+			Debug.Log("kaczka");
 			Destroy(other.gameObject);
+			AnimalController.EyesOn();
 			_attack = false;
 		}
 	}
