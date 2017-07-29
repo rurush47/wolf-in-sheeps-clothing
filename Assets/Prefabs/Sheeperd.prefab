@@ -34,7 +34,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231803796120018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.248514, y: 3.5918891, z: 13.041189}
+  m_LocalPosition: {x: 24.05373, y: -0.11596537, z: -28.977282}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f51d3120ec4c94b8b7ffc2bc104128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepCount: 37
-  sheepPrefab: {fileID: 0}
+  sheepCount: 21
+  sheepPrefab: {fileID: 1034346766430726, guid: de0431400c2a4c646b9e4fb1d5967830,
+    type: 2}
   plane: {fileID: 0}
