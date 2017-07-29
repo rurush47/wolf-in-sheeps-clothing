@@ -29,7 +29,7 @@ public class AttackCollider : MonoBehaviour
 			Debug.Log("kaczka");
 			Destroy(other.gameObject);
 			AnimalController.EyesOn();
-			_attack = false;
 		}
+		_attack = false;
 	}
 }

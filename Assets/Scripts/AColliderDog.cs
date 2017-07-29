@@ -25,13 +25,13 @@ public class AColliderDog : MonoBehaviour {
 		if (other.gameObject.CompareTag("Owca") && _attack)
 		{
 			Destroy(other.gameObject);
-			_attack = false;
 		}
 		
 		if (other.gameObject.CompareTag("Wilk") && _attack)
 		{
 			Destroy(other.gameObject);
-			_attack = false;
 		}
+		_attack = false;
+
 	}
 }
