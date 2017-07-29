@@ -57,7 +57,6 @@ public class SheepBehaviour : MonoBehaviour
 		float timePassed = 0.0f;
 		while (timePassed < rotationTime)
 		{
-			Debug.Log("time passed = " + timePassed);
 			transform.rotation = Quaternion.Slerp(currentRotation, endRotation, timePassed/rotationTime);
 			timePassed += Time.deltaTime;
 			yield return null;
