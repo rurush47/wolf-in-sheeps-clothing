@@ -7,6 +7,7 @@ public class SheepBehaviour : MonoBehaviour
 
 	private Vector3 sheepDirection;
 	private CharacterController sheepCotroller;
+	private Animator sheepAnimator;
 
 	public Vector3 islandCenter;
 	public float baseSheepSpeed;
@@ -27,6 +28,7 @@ public class SheepBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
+		sheepAnimator = GetComponent<Animator>();
 		sheepCotroller = GetComponent<CharacterController>();
 		sheepDirection = Quaternion.Euler(0,Random.Range(0,360),0) * transform.forward;
 		sheepDirection = sheepDirection.normalized;
@@ -37,17 +39,18 @@ public class SheepBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		sheepCotroller.Move(sheepDirection*sheepSpeed*Time.deltaTime);
+		sheepCotroller.SimpleMove(sheepDirection*sheepSpeed);
 	}
 
 
 	private IEnumerator WaitForXSeconds()
 	{
+		sheepAnimator.SetBool("move", true);
 		yield return new WaitForSeconds(Random.Range(minDirChangeTime, maxDirChangeTime));
 		Quaternion randRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
 		Vector3 sheepDirectionCache = (randRotation * transform.forward).normalized;
 		float rotationTime = Random.Range(minRotChangeTime, maxRotChangeTime);
-		
+		sheepAnimator.SetBool("move", false);
 		StartCoroutine(LerpRotation(transform.rotation, transform.rotation * randRotation, rotationTime, sheepDirectionCache));
 	}
 
