@@ -8,7 +8,7 @@ public class UniqueName : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        
         //string name = gameObject.name;
 
         //GameObject other_copy = GameObject.Find(name);

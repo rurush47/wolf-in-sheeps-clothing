@@ -9,11 +9,12 @@ public class MainMenuController : MonoBehaviour
     
     public void ButtonStart()
     {
-
+   
         // audioComponent.button_press();
         // menuButton.GetComponent<Image>().sprite = menuButton.spriteState.pressedSprite;
 
-        SceneManager.LoadScene("Gameplay", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("Gameplay", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Gameplay", LoadSceneMode.Single);
 
     }
 
