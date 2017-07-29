@@ -176,7 +176,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113041298952482}
-  m_LocalRotation: {x: 0.74122417, y: 0.6701152, z: 0.023047527, w: -0.0316417}
+  m_LocalRotation: {x: 0.7412242, y: 0.67011523, z: 0.02304753, w: -0.031641703}
   m_LocalPosition: {x: 0.34917927, y: -0.23145702, z: -0.041939378}
   m_LocalScale: {x: 0.99999994, y: 0.99998975, z: 0.99999404}
   m_Children: []
@@ -381,7 +381,7 @@ Animator:
   m_GameObject: {fileID: 1254954781922856}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 858b33b6ae5227043b882d1f03cf028e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ca9d357b87f17924ea8cf38a37128554, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e79441f03fd4cd45a7a9603c8245d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AnimalController: {fileID: 114325354106558608}
+  AnimalController: {fileID: 0}
 --- !u!114 &114325354106558608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,6 +419,7 @@ MonoBehaviour:
   Horizontal: Horizontal_2
   Vertical: Vertical_2
   AttackButton: Jump_2
+  Animator: {fileID: 0}
 --- !u!137 &137351757778268354
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

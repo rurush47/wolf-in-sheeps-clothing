@@ -5,16 +5,9 @@ using UnityEngine;
 public class AttackCollider : MonoBehaviour
 {
 
-	private BoxCollider _collider;
 	public Wolf AnimalController;
 	private bool _attack;
 	
-	
-	void Start ()
-	{
-		_collider = GetComponent<BoxCollider>();
-	}
-
 	void Update () {
 		if (Input.GetButton(AnimalController.AttackButton))
 		{
@@ -24,7 +17,7 @@ public class AttackCollider : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (/*other.gameObject.CompareTag("Owca") &&*/ _attack)
+		if (/*other.gameObject.CompareTag("Owca") &&*/ _attack && !GameplayManager.Instance.Day)
 		{
 			Debug.Log("kaczka");
 			Destroy(other.gameObject);

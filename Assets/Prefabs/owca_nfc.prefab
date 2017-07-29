@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 143852260472337440}
   m_Layer: 0
   m_Name: owca_nfc
-  m_TagString: Untagged
+  m_TagString: Owca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -239,7 +239,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202728122697310}
-  m_LocalRotation: {x: 0.74122417, y: 0.6701152, z: 0.023047527, w: -0.0316417}
+  m_LocalRotation: {x: 0.7412242, y: 0.67011523, z: 0.02304753, w: -0.031641703}
   m_LocalPosition: {x: 0.34917927, y: -0.23145702, z: -0.041939378}
   m_LocalScale: {x: 0.99999994, y: 0.99998975, z: 0.99999404}
   m_Children: []
