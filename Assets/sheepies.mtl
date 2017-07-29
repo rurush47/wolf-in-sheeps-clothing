@@ -1,0 +1,90 @@
+# Blender MTL File: 'sheepies.blend'
+# Material Count: 8
+
+newmtl Material.000
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd sheep-tex3.png
+
+newmtl Material.000_NONE
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\RuRush\\Documents\\burningwell\\hair\\tiles\\boar-TT7020726.png
+
+newmtl Material.001
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd sheep-tex3.png
+
+newmtl Material.001_NONE
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\RuRush\\Documents\\burningwell\\hair\\tiles\\boar-TT7020726.png
+
+newmtl Material.002
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd sheep-tex3.png
+
+newmtl Material.002_NONE
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\RuRush\\Documents\\burningwell\\hair\\tiles\\boar-TT7020726.png
+
+newmtl Material.003
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd sheep-tex3.png
+
+newmtl Material.003_NONE
+Ns 37.254902
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.144068 0.144068 0.144068
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\RuRush\\Documents\\burningwell\\hair\\tiles\\boar-TT7020726.png
