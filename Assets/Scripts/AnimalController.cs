@@ -4,7 +4,7 @@ public class AnimalController : MonoBehaviour {
 	public float Speed = 6.0F;
     public float Gravity = 20.0F;
     public Vector3 StopRotatingVector;
-    public bool ControlledByPlayer;
+    public bool ControlledByPlayer = true;
     private Vector3 _moveDirection = Vector3.zero;
     public string Horizontal = "Horizontal_P1";
     public string Vertical = "Vertical_P1";
