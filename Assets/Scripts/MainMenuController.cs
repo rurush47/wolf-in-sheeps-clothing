@@ -9,6 +9,7 @@ public class MainMenuController : MonoBehaviour
     
     public void ButtonStart()
     {
+        //SceneManager.LoadScene("Gameplay", LoadSceneMode.Single);
         SceneManager.LoadScene("GameScene", LoadSceneMode.Single);
     }
 
