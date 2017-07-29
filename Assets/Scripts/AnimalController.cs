@@ -9,6 +9,12 @@ public class AnimalController : MonoBehaviour {
     public string Horizontal = "Horizontal_P1";
     public string Vertical = "Vertical_P1";
     public string AttackButton = "Jump_P1";
+    public Animator Animator;
+
+    private void Start()
+    {
+        Animator = GetComponent<Animator>();
+    }
 
     void Update() {
         if (!ControlledByPlayer) return;
@@ -37,6 +43,11 @@ public class AnimalController : MonoBehaviour {
         if (facingrotation != StopRotatingVector)
         {
             transform.rotation = Quaternion.LookRotation(_moveDirection);
+            Animator.SetBool("move", true);
+        }
+        else
+        {
+            Animator.SetBool("move", false);
         }
     }
 }

@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 143852260472337440}
   m_Layer: 0
   m_Name: owca_nfc
-  m_TagString: Untagged
+  m_TagString: Owca
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

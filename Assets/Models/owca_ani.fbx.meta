@@ -77,7 +77,81 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|ArmatureAction
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/cialo
+        weight: 1
+      - path: Armature/cialo/cialo.001
+        weight: 1
+      - path: Armature/cialo/cialo.001/cialo.001_end
+        weight: 1
+      - path: Armature/przednia.L
+        weight: 1
+      - path: Armature/przednia.L/przednia.L_end
+        weight: 1
+      - path: Armature/przednia.L.IK
+        weight: 1
+      - path: Armature/przednia.L.IK/przednia.L.IK_end
+        weight: 1
+      - path: Armature/przednia.R
+        weight: 1
+      - path: Armature/przednia.R/przednia.R_end
+        weight: 1
+      - path: Armature/przednia.R.IK.002
+        weight: 1
+      - path: Armature/przednia.R.IK.002/przednia.R.IK.002_end
+        weight: 1
+      - path: Armature/tylnia.L
+        weight: 1
+      - path: Armature/tylnia.L/tylnia.L_end
+        weight: 1
+      - path: Armature/tylnia.L.IK
+        weight: 1
+      - path: Armature/tylnia.L.IK/tylnia.L.IK_end
+        weight: 1
+      - path: Armature/tylnia.R
+        weight: 1
+      - path: Armature/tylnia.R/tylnia.R_end
+        weight: 1
+      - path: Armature/tylnia.R.IK.002
+        weight: 1
+      - path: Armature/tylnia.R.IK.002/tylnia.R.IK.002_end
+        weight: 1
+      - path: Plane.001
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

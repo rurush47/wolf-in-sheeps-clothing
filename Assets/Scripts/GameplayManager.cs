@@ -17,13 +17,17 @@ public class GameplayManager : Singleton<GameplayManager>
 	public GameObject Dog2;
 	public GameObject Wolf1;
 	public GameObject Wolf2;
+	
 	private float _currentShiftTime;
+	private float _currentDayTime;
+
 	private bool _nightShift;
 	private bool _dayShift;
 
 	private void Start()
 	{
 		_currentShiftTime = ShiftDuration;
+		_currentDayTime = DayDuration;
 	}
 
 	public void Update()
@@ -66,6 +70,26 @@ public class GameplayManager : Singleton<GameplayManager>
 			}
 		}
 
+		if (_currentDayTime > 0)
+		{
+			_currentDayTime -= Time.deltaTime;
+		}
+		else
+		{
+			_currentDayTime = DayDuration;
+			if (Day)
+			{
+				SwitchToNight();
+			}
+			else
+			{
+				SwitchToDay();
+			}
+		}
+		
+		//Day night cycle
+		
+
 		if (Input.GetKeyDown(KeyCode.A))
 		{
 			SwitchToNight();
@@ -84,10 +108,12 @@ public class GameplayManager : Singleton<GameplayManager>
 	public void SwitchToNight()
 	{
 		_nightShift = true;
+		Day = false;
 	}
 	
 	public void SwitchToDay()
 	{
 		_dayShift = true;
+		Day = true;
 	}
 }
