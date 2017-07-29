@@ -30,7 +30,7 @@ public class AnimalController : MonoBehaviour {
         
         if (facingrotation != StopRotatingVector)
         {
-            transform.rotation = Quaternion.LookRotation(-_moveDirection);            
+            transform.rotation = Quaternion.LookRotation(_moveDirection);            
         }
     }
 }
