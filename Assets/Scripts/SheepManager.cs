@@ -15,8 +15,8 @@ public class SheepManager : MonoBehaviour
 		for (int i = 0; i < sheepCount; i++)
 		{
 			Instantiate(sheepPrefab,
-				new Vector3(Random.Range(-50.0f, 50.0f), plane.transform.position.y, Random.Range(-50.0f, 50.0f)),
-				Quaternion.Euler(-90.0f, Random.Range(0, 360), 83.0f));
+				new Vector3(Random.Range(-50.0f, 50.0f), 6.83f, Random.Range(-50.0f, 50.0f)),
+				Quaternion.Euler(0.0f, Random.Range(0, 360), 0.0f));
 		}
 	}
 	

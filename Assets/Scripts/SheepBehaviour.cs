@@ -6,19 +6,83 @@ public class SheepBehaviour : MonoBehaviour
 {
 
 	private Vector3 sheepDirection;
-	private Rigidbody sheepRigidBody;
+	private CharacterController sheepCotroller;
+
+	public Vector3 islandCenter;
+	public float baseSheepSpeed;
+	public float sheepSpeed = 1.0f;
+	
+	
+	public float minDirChangeTime = 0.5f;
+	public float maxDirChangeTime = 2.5f;
+	
+	public float minRotChangeTime = 0.5f;
+	public float maxRotChangeTime = 2.5f;
+
+	public float minEscTime = 0.5f;
+	public float maxEscTime = 2f;
+
+	public float escRotationTIme = 0.3f;
 	
 	// Use this for initialization
-	void Start ()
+	void Awake()
 	{
-		sheepRigidBody = GetComponent<Rigidbody>();
-		sheepDirection = Quaternion.Euler(0,Random.Range(0,360),0) * Vector3.forward;
+		sheepCotroller = GetComponent<CharacterController>();
+		sheepDirection = Quaternion.Euler(0,Random.Range(0,360),0) * transform.forward;
 		sheepDirection = sheepDirection.normalized;
+		transform.rotation = transform.rotation * Quaternion.FromToRotation(transform.forward, sheepDirection);
+		StartCoroutine(WaitForXSeconds());
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
-		sheepRigidBody.MovePosition(transform.position + sheepDirection*Time.fixedDeltaTime);	
-		
+	void Update ()
+	{
+		sheepCotroller.Move(sheepDirection*sheepSpeed*Time.deltaTime);
 	}
+
+
+	private IEnumerator WaitForXSeconds()
+	{
+		yield return new WaitForSeconds(Random.Range(minDirChangeTime, maxDirChangeTime));
+		Quaternion randRotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+		Vector3 sheepDirectionCache = (randRotation * transform.forward).normalized;
+		float rotationTime = Random.Range(minRotChangeTime, maxRotChangeTime);
+		
+		StartCoroutine(LerpRotation(transform.rotation, transform.rotation * randRotation, rotationTime, sheepDirectionCache));
+	}
+
+	private IEnumerator LerpRotation(Quaternion currentRotation, Quaternion endRotation, float rotationTime, Vector3 newSheepDirection)
+	{
+		sheepDirection = Vector3.zero;
+		float timePassed = 0.0f;
+		while (timePassed < rotationTime)
+		{
+			Debug.Log("time passed = " + timePassed);
+			transform.rotation = Quaternion.Slerp(currentRotation, endRotation, timePassed/rotationTime);
+			timePassed += Time.deltaTime;
+			yield return null;
+		}
+		sheepDirection = newSheepDirection;
+		StartCoroutine(WaitForXSeconds());
+	}
+
+	private IEnumerator RunTowardCenter()
+	{
+		sheepSpeed = 1.5f * baseSheepSpeed;
+		StartCoroutine(LerpRotation(transform.rotation, Quaternion.LookRotation(islandCenter), escRotationTIme,
+			(islandCenter - transform.position).normalized));
+		yield return new WaitForSeconds(Random.Range(minEscTime, maxEscTime));
+		sheepSpeed = baseSheepSpeed;
+
+	}
+	
+	public void getBarkedAt()
+	{
+		StopAllCoroutines();
+		StartCoroutine(RunTowardCenter());
+	}
+	
+	
+
 }
+
