@@ -10,6 +10,13 @@ public class AnimalController : MonoBehaviour {
     public string Vertical = "Vertical_P1";
     public string AttackButton = "Jump_P1";
 
+    void Start()
+    {
+        // fill the reference in child
+        AttackCollider attack_collider = GetComponentInChildren<AttackCollider>();
+        attack_collider.AnimalController = this;
+    }
+
     void Update() {
         if (!ControlledByPlayer) return;
         CharacterController controller = GetComponent<CharacterController>();
