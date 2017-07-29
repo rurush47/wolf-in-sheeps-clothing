@@ -34,7 +34,7 @@ public class GameController : MonoBehaviour
     void Start() {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
     }
-
+    
     public void AddPlayer(string player_name, int player_id, int player_skin_id, int team = 1)
     {
         PlayerStruct new_player = new PlayerStruct();
