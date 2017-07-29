@@ -58,6 +58,16 @@ public class Wolf : AnimalController
                 _eyesGlowing = false;
             }    
         }
+        
+        if (facingrotation != StopRotatingVector)
+        {
+            transform.rotation = Quaternion.LookRotation(_moveDirection);
+            Animator.SetBool("move", true);
+        }
+        else
+        {
+            Animator.SetBool("move", false);
+        }
     }
 
     public void EyesOn()

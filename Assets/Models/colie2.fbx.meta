@@ -83,7 +83,87 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|walking,dog
+      takeName: Armature|walking,dog
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/first leg  IK l
+        weight: 1
+      - path: Armature/first leg  IK l/first leg  IK l_end
+        weight: 1
+      - path: Armature/first leg  IK r
+        weight: 1
+      - path: Armature/first leg  IK r/first leg  IK r_end
+        weight: 1
+      - path: Armature/first leg l
+        weight: 1
+      - path: Armature/first leg l/first leg l_end
+        weight: 1
+      - path: Armature/first leg r
+        weight: 1
+      - path: Armature/first leg r/first leg r_end
+        weight: 1
+      - path: Armature/second leg IK l
+        weight: 1
+      - path: Armature/second leg IK l/second leg IK l_end
+        weight: 1
+      - path: Armature/second leg IK r
+        weight: 1
+      - path: Armature/second leg IK r/second leg IK r_end
+        weight: 1
+      - path: Armature/second leg l
+        weight: 1
+      - path: Armature/second leg l/second leg l_end
+        weight: 1
+      - path: Armature/second leg r
+        weight: 1
+      - path: Armature/second leg r/second leg r_end
+        weight: 1
+      - path: Armature/stomach
+        weight: 1
+      - path: Armature/stomach/neck
+        weight: 1
+      - path: Armature/stomach/neck/neck_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Empty
+        weight: 1
+      - path: Lamp
+        weight: 1
+      - path: Plane
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
