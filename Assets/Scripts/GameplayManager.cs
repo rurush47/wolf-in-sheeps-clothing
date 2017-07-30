@@ -24,13 +24,36 @@ public class GameplayManager : Singleton<GameplayManager>
 	private bool _nightShift;
 	private bool _dayShift;
 
-	private void Start()
+    public List<GameObject> Sheeps;
+    public List<GameObject> Players;
+
+    private void Start()
 	{
 		_currentShiftTime = ShiftDuration;
 		_currentDayTime = DayDuration;
-	}
 
-	public void Update()
+        // register players in list
+        //foreach (PlayerStruct player_data in GameController.Instance.player_data_list)
+        //{
+        //    Players.Add();
+        //}
+        Players.Add(Dog2);
+        Players.Add(Wolf1);
+        //Players.Add(Wolf2);
+
+        // register characters to camera
+        foreach (GameObject character in Players)
+        {
+            CameraController.Instance.AddTarget(character.transform);
+        }
+        foreach (GameObject character in Sheeps)
+        {
+            CameraController.Instance.AddTarget(character.transform);
+        }
+
+    }
+
+    public void Update()
 	{
 		if (_nightShift == true)
 		{

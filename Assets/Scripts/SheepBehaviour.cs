@@ -83,8 +83,14 @@ public class SheepBehaviour : MonoBehaviour
 		StopAllCoroutines();
 		StartCoroutine(RunTowardCenter());
 	}
-	
-	
+
+    public void OnDestroy()
+    {
+        // stop being tracked by camera
+        CameraController.Instance.RemoveTarget(gameObject.transform);
+        // unregister from the list of active characters
+        GameplayManager.Instance.Sheeps.Remove(gameObject);
+    }
 
 }
 
