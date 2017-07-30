@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameplayManager : Singleton<GameplayManager>
+//public class GameplayManager : Singleton<GameplayManager>
+public class GameplayManager : MonoBehaviour
 {
 	public int SheepCount = 0;
 	public int LooseCondition;
@@ -34,7 +35,17 @@ public class GameplayManager : Singleton<GameplayManager>
 	public Sprite WinSprite;
 	public Sprite LooseSprite;
 
-	private void Start()
+    public static GameplayManager Instance = null;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+    }
+
+    private void Start()
 	{
 		_currentShiftTime = ShiftDuration;
 		_currentDayTime = DayDuration;
