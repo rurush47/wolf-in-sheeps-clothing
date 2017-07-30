@@ -163,6 +163,5 @@ public class GameplayManager : Singleton<GameplayManager>
 	{
 		PopUp.sprite = sprite;
 		PopUp.gameObject.SetActive(true);
-		PopUp.SetNativeSize();
 	}
 }
