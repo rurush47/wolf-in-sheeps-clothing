@@ -44,19 +44,20 @@ public class GameplayManager : Singleton<GameplayManager>
         //{
         //    Players.Add();
         //}
-        Players.Add(Dog2);
+        Players.Add(Dog1);
         Players.Add(Wolf1);
         //Players.Add(Wolf2);
 
-        // register characters to camera
-        foreach (GameObject character in Players)
-        {
-            CameraController.Instance.AddTarget(character.transform);
-        }
-        foreach (GameObject character in Sheeps)
-        {
-            CameraController.Instance.AddTarget(character.transform);
-        }
+        //// DISABLED camera scaling
+        //// register characters to camera
+        //foreach (GameObject character in Players)
+        //{
+        //    CameraController.Instance.AddTarget(character.transform);
+        //}
+        //foreach (GameObject character in Sheeps)
+        //{
+        //    CameraController.Instance.AddTarget(character.transform);
+        //}
 
     }
 

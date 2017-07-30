@@ -53,9 +53,9 @@ public class AColliderDog : MonoBehaviour
 		if (other.gameObject.CompareTag("Wilk") && Input.GetButton(AnimalController.AttackButton)  && !_onCooldown)
 		{
 			crunch.Play();
-			Debug.Log("owca hapnięta");
-			//make obj inactive!
-			other.gameObject.SetActive(false);
+            Debug.Log("wilk-owca hapnięta");
+            //make obj inactive!
+            other.gameObject.SetActive(false);
 		}
 		
 		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.WofButton)  && !_onCooldown)

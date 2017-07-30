@@ -55,9 +55,9 @@ public class AnimalController : MonoBehaviour {
     public void OnDestroy()
     {
         // stop being tracked by camera
-        CameraController.Instance.RemoveTarget(gameObject.transform);
+        //CameraController.Instance.RemoveTarget(gameObject.transform);
         // unregister from the list of active characters
-        GameplayManager.Instance.Players.Remove(gameObject);
+        //GameplayManager.Instance.Players.Remove(gameObject);
     }
 
 }
