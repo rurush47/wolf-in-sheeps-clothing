@@ -4260,7 +4260,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400012, guid: 2f41ac80e2d035746bb4b70839671a59, type: 3}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1156750096}
-  m_LocalRotation: {x: -0.6472016, y: -0.28483364, z: -0.28483352, w: 0.6472016}
+  m_LocalRotation: {x: -0.64720154, y: -0.2848336, z: -0.2848335, w: 0.64720154}
   m_LocalPosition: {x: -5.652833, y: 0.3512796, z: 5.58635}
   m_LocalScale: {x: 4.020587, y: 4.020587, z: 34.182774}
   m_Children: []
@@ -5263,6 +5263,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114120500461714976, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -5353,9 +5358,94 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114120500461714976, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120500461714976, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120500461714976, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1448398583}
+    - target: {fileID: 114120500461714976, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtonQuit
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120500461714976, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 224240913095208680, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224240913095208680, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224240913095208680, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224240913095208680, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224240913095208680, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224240913095208680, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224598924827534426, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 224678725226883890, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -150
+      objectReference: {fileID: 0}
+    - target: {fileID: 114282937511229084, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_Text
+      value: Oh no! You killed Donald! Donald was never very liked among the community,
+        but he had money which allowed him access to the world of politics. He proposed
+        to build a fence to separate the sheep from the wolves (and to make the wolves
+        pay for it), to make the grazing land great again.His wife is grateful for
+        the inheritance money.
+      objectReference: {fileID: 0}
+    - target: {fileID: 224866662153280306, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 380
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: aa62bb3b8af51c74e969afe18b6689f8, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1448398583 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114025823540594452, guid: aa62bb3b8af51c74e969afe18b6689f8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1448398582}
+  m_Script: {fileID: 11500000, guid: be1def3712182c942891b5d3ff741f80, type: 3}
 --- !u!1 &1465465673
 GameObject:
   m_ObjectHideFlags: 0

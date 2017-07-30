@@ -97,9 +97,6 @@ public class GameplayManager : MonoBehaviour
 				_nightShift = false;
 				_currentShiftTime = ShiftDuration;
 
-                // END of the NIGHT
-                StartCoroutine(DisplayMemorials());
-
             }
 		}
 		
@@ -177,6 +174,10 @@ public class GameplayManager : MonoBehaviour
 	{
 		_dayShift = true;
 		Day = true;
+		
+		// END of the NIGHT
+		StartCoroutine(DisplayMemorials());
+
 	}
 
 	public void GameOver()
@@ -217,7 +218,10 @@ public class GameplayManager : MonoBehaviour
             MemorialCanvasController.Instance.ToggleMenu();
             yield return new WaitForSeconds(0.2f);
         }
+	    
+	    nightly_memorials.Clear();
     }
+
 
 
 }

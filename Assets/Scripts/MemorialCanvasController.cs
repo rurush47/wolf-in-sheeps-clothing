@@ -9,6 +9,7 @@ public class MemorialCanvasController : MonoBehaviour {
     public Text memorial_text_field;
     public string current_memorial_text;
 
+    public float PreviousTimeScale;
     //public float PreviousTimeScale;
 
     public static MemorialCanvasController Instance = null;
@@ -21,6 +22,9 @@ public class MemorialCanvasController : MonoBehaviour {
             Destroy(gameObject);
 
         current_memorial_text = "lorem ipsum";
+        
+        
+        PreviousTimeScale = Time.timeScale;
     }
 
     // Use this for initialization
@@ -61,8 +65,6 @@ public class MemorialCanvasController : MonoBehaviour {
 
         memorial_text_field.text = current_memorial_text;
 
-        Menu.SetActive(!Menu.activeInHierarchy);
-
         //if (Menu.activeInHierarchy)
         //{
         //    //PreviousTimeScale = Time.timeScale;
@@ -73,11 +75,26 @@ public class MemorialCanvasController : MonoBehaviour {
         //    Time.timeScale = PreviousTimeScale;
         //}
 
+        Menu.SetActive(!Menu.activeInHierarchy);
+
+        if (Menu.activeInHierarchy)
+        {
+            Debug.Log("Menu.activeInHierarchy");
+            PreviousTimeScale = Time.timeScale;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Debug.Log("not Menu.activeInHierarchy");
+            Time.timeScale = PreviousTimeScale;
+        }
+          
     }
+    
     
     public void ButtonQuit()
     {
-        Application.Quit();
+        ToggleMenu();
     }
 
 }
