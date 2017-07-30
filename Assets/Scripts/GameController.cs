@@ -34,7 +34,8 @@ public class GameController : MonoBehaviour
 
     // Use this for initialization
     void Start() {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        //SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Intro", LoadSceneMode.Additive);
     }
     
     public void AddPlayerData(string player_name, int player_id, int player_skin_id, int team = 1)

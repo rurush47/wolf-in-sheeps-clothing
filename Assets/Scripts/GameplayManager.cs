@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameplayManager : Singleton<GameplayManager>
+public class GameplayManager : MonoBehaviour
 {
 	public int SheepCount = 0;
 	public int LooseCondition;
@@ -29,7 +29,9 @@ public class GameplayManager : Singleton<GameplayManager>
 	private bool _nightShift;
 	private bool _dayShift;
 
-	public Text SheepsCountText;
+    public List<GameObject> Sheeps;
+    public List<GameObject> Players;
+    public Text SheepsCountText;
 
 	public Image PopUp;
 	public Sprite WinSprite;
@@ -56,7 +58,6 @@ public class GameplayManager : Singleton<GameplayManager>
 
 	private void Start()
 	{
-
 		RenderSettings.ambientIntensity = ambientLightIntensity;
 		_currentShiftTime = ShiftDuration;
 		_currentDayTime = DayDuration;
@@ -71,7 +72,7 @@ public class GameplayManager : Singleton<GameplayManager>
 			if (_currentShiftTime > 0)
 			{
 				GlobalLight.intensity = Mathf.Lerp(0, LightIntensity, _currentShiftTime / ShiftDuration);
-				DirectionalLight.intensity = Mathf.Lerp(0, DirectionalLightIntensity, _currentShiftTime / ShiftDuration);
+				//DirectionalLight.intensity = Mathf.Lerp(0, DirectionalLightIntensity, _currentShiftTime / ShiftDuration);
 				RenderSettings.ambientIntensity = Mathf.Lerp(0, ambientLightIntensity, _currentShiftTime / ShiftDuration);
 				foreach (var light in DogLights)
 				{
@@ -92,7 +93,7 @@ public class GameplayManager : Singleton<GameplayManager>
 			if (_currentShiftTime > 0)
 			{
 				GlobalLight.intensity = Mathf.Lerp(LightIntensity, 0, _currentShiftTime / ShiftDuration);
-				DirectionalLight.intensity = Mathf.Lerp(DirectionalLightIntensity, 0, _currentShiftTime / ShiftDuration);
+				//DirectionalLight.intensity = Mathf.Lerp(DirectionalLightIntensity, 0, _currentShiftTime / ShiftDuration);
 				RenderSettings.ambientIntensity = Mathf.Lerp(ambientLightIntensity, 0, _currentShiftTime / ShiftDuration);
 				foreach (var light in DogLights)
 				{
@@ -168,9 +169,13 @@ public class GameplayManager : Singleton<GameplayManager>
 	{
 		_dayShift = true;
 		Day = true;
-	}
 
-	public void GameOver()
+        // END of the NIGHT
+        StartCoroutine(DisplayMemorials());
+
+    }
+
+    public void GameOver()
 	{
 		Debug.Log("game over");
 		ShowPopup(LooseSprite);
@@ -218,7 +223,6 @@ public class GameplayManager : Singleton<GameplayManager>
 	    
 	    nightly_memorials.Clear();
     }
-
-
+    
 
 }

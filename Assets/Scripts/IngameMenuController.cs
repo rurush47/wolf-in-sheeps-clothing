@@ -40,6 +40,21 @@ public class IngameMenuController : MonoBehaviour
             ToggleIngameMenu();
         }
 
+        // enable pause and ingame menu
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+
+            Debug.Log("K");
+
+            // write memo about sheep
+            GameObject sheep = GameplayManager.Instance.Sheeps[0];
+            int sheep_id = sheep.GetComponent<SheepBehaviour>().sheep_id;
+            GameplayManager.Instance.nightly_memorials.Add(SheepManager.Instance.bios_dog[sheep_id]);
+
+            sheep.gameObject.GetComponent<SheepBehaviour>().DieBitch();
+
+        }
+
     }
 
     // PAUSE
