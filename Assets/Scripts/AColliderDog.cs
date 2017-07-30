@@ -45,6 +45,7 @@ public class AColliderDog : MonoBehaviour
 			//kill ship here
 			GameplayManager.Instance.SheepCount--;
 			other.gameObject.GetComponent<ParticleSystem>().Play();
+			other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
 
 //			Destroy(other.gameObject);
 
@@ -62,7 +63,6 @@ public class AColliderDog : MonoBehaviour
 		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.WofButton)  && !_onCooldown)
 		{
 			crunch.Play();
-			Debug.Log("KUUUUUTAASSSSS!!!!!");
 			other.gameObject.GetComponent<SheepBehaviour>().getBarkedAt();
 		}
 	}

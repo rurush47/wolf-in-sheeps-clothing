@@ -78,11 +78,26 @@ public class SheepBehaviour : MonoBehaviour
 		sheepSpeed = baseSheepSpeed;
 
 	}
+
+	private IEnumerator Die()
+	{
+		while (transform.localScale.x > 0.05)
+		{
+			transform.localScale = transform.localScale - new Vector3(0.05f, 0.05f, 0.05f);
+			yield return null;
+		}
+	}
 	
 	public void getBarkedAt()
 	{
 		StopAllCoroutines();
 		StartCoroutine(RunTowardCenter());
+	}
+
+	public void DieBitch()
+	{
+		StopAllCoroutines();
+		StartCoroutine(Die());
 	}
 	
 	
