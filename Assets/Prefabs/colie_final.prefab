@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 4496974432591182}
   - component: {fileID: 65020077883082542}
   - component: {fileID: 114394995672681270}
+  - component: {fileID: 82487764368507752}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -725,6 +726,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.5723798, y: 4.106488, z: 9.294424}
   m_Center: {x: 0.16278923, y: 0.41672373, z: 4.147212}
+--- !u!82 &82487764368507752
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1561768038069976}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 9652d32e63527654aaccf6c76c718cb3, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95759863515808908
 Animator:
   serializedVersion: 3
@@ -793,9 +874,10 @@ MonoBehaviour:
   Gravity: 20
   StopRotatingVector: {x: 0, y: 0, z: 0}
   ControlledByPlayer: 1
-  Horizontal: Horizontal_3
-  Vertical: Vertical_3
-  AttackButton: Jump_3
+  Horizontal: Horizontal_1
+  Vertical: Vertical_1
+  AttackButton: Jump_1
+  WofButton: Wof_1
   Animator: {fileID: 0}
 --- !u!114 &114394995672681270
 MonoBehaviour:
@@ -809,7 +891,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimalController: {fileID: 114382501409197102}
-  AttackCooldown: 2
+  AttackCooldown: 1
+  wofSound: {fileID: 8300000, guid: 069b0c52004775144a880acd14759a08, type: 3}
+  crunchSound: {fileID: 8300000, guid: 9652d32e63527654aaccf6c76c718cb3, type: 3}
 --- !u!137 &137109775957655802
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

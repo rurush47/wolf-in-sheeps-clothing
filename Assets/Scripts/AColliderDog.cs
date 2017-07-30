@@ -9,6 +9,8 @@ public class AColliderDog : MonoBehaviour
 	private float _currentCooldownTimer;
 	private bool _onCooldown;
 	private AudioSource crunch;
+	public AudioClip wofSound;
+	public AudioClip crunchSound;
 
 	private void Start()
 	{
@@ -41,12 +43,11 @@ public class AColliderDog : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.AttackButton) && !_onCooldown)
 		{
+			crunch.clip = crunchSound; 
 			crunch.Play();
 			//kill ship here
-			GameplayManager.Instance.SheepCount--;
-			Destroy(other.gameObject);
-
-			gameObject.GetComponentInParent<CharacterController>().Move(Vector3.forward);
+//			Destroy(other.gameObject);
+			other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
 		}
 		
 		if (other.gameObject.CompareTag("Wilk") && Input.GetButton(AnimalController.AttackButton)  && !_onCooldown)
@@ -55,6 +56,13 @@ public class AColliderDog : MonoBehaviour
 			Debug.Log("owca hapnięta");
 			//make obj inactive!
 			other.gameObject.SetActive(false);
+		}
+		
+		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.WofButton)  && !_onCooldown)
+		{
+			crunch.clip = wofSound;
+			crunch.Play();
+			other.GetComponent<SheepBehaviour>().getBarkedAt();
 		}
 	}
 }

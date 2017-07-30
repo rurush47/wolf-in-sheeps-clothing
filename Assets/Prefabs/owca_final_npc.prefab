@@ -694,8 +694,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   islandCenter: {x: 0, y: 0, z: 0}
-  baseSheepSpeed: 0
-  sheepSpeed: 2
+  baseSheepSpeed: 3
+  sheepSpeed: 3
   minDirChangeTime: 0.5
   maxDirChangeTime: 2.5
   minRotChangeTime: 0.5

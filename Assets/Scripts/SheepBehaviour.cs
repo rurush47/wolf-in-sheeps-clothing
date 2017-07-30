@@ -8,6 +8,7 @@ public class SheepBehaviour : MonoBehaviour
 	private Vector3 sheepDirection;
 	private CharacterController sheepCotroller;
 	private Animator sheepAnimator;
+	public float Gravity;
 
 	public Vector3 islandCenter;
 	public float baseSheepSpeed;
@@ -39,7 +40,9 @@ public class SheepBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		sheepCotroller.SimpleMove(sheepDirection*sheepSpeed);
+		Vector3 moveVec = sheepDirection * sheepSpeed;
+		moveVec.y -= Gravity * Time.deltaTime;
+		sheepCotroller.SimpleMove(moveVec);
 	}
 
 
@@ -77,14 +80,28 @@ public class SheepBehaviour : MonoBehaviour
 		sheepSpeed = baseSheepSpeed;
 
 	}
+
+	private IEnumerator Die()
+	{
+		while (transform.localScale.x > 0.05)
+		{
+			transform.localScale = transform.localScale - new Vector3(0.05f, 0.05f, 0.05f);
+			yield return null;
+		}
+	}
 	
 	public void getBarkedAt()
 	{
 		StopAllCoroutines();
 		StartCoroutine(RunTowardCenter());
 	}
-	
-	
+
+	public void DieBitch()
+	{
+		GameplayManager.Instance.SheepCount--;
+		StopAllCoroutines();
+		StartCoroutine(Die());
+	}
 
 }
 

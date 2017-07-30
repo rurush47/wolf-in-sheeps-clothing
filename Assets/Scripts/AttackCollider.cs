@@ -43,7 +43,7 @@ public class AttackCollider : MonoBehaviour
 		    !GameplayManager.Instance.Day)
 		{
 			GetComponent<AudioSource>().Play();
-			Destroy(other.gameObject);
+			other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
 			AnimalController.EyesOn();
 		}
 		_attack = false;

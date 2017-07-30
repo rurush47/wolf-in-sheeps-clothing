@@ -44,7 +44,7 @@ public class Wolf : MonoBehaviour
             _moveDirection *= Speed;
         }
 
-        _moveDirection.y -= Time.deltaTime;
+        _moveDirection.y -= Gravity*Time.deltaTime;
         controller.Move(_moveDirection * Time.deltaTime);
 
         Vector3 facingrotation = Vector3.Normalize(new Vector3(Input.GetAxis(Horizontal),

@@ -9,6 +9,7 @@ public class AnimalController : MonoBehaviour {
     public string Horizontal = "Horizontal_1";
     public string Vertical = "Vertical_1";
     public string AttackButton = "Jump_1";
+    public string WofButton = "Wof_1";
     public Animator Animator;
 
     private void Start()
@@ -33,7 +34,7 @@ public class AnimalController : MonoBehaviour {
             _moveDirection *= Speed;
         }
 
-        _moveDirection.y -= Time.deltaTime;
+        _moveDirection.y -= Gravity* Time.deltaTime;
         controller.Move(_moveDirection * Time.deltaTime);
 
         Vector3 facingrotation = Vector3.Normalize(new Vector3(Input.GetAxis(Horizontal),
