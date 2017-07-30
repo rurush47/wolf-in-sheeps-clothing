@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class Wolf : AnimalController
+public class Wolf : MonoBehaviour
 {
     private BoxCollider _attackCollider;
     public float GlowTime;
@@ -10,8 +10,19 @@ public class Wolf : AnimalController
     private float _currentGlowingTime;
     private bool _eyesGlowing;
     
+    public float Speed = 6.0F;
+    public float Gravity = 20.0F;
+    public Vector3 StopRotatingVector;
+    public bool ControlledByPlayer = true;
+    protected Vector3 _moveDirection = Vector3.zero;
+    public string Horizontal = "Horizontal_P1";
+    public string Vertical = "Vertical_P1";
+    public string AttackButton = "Jump_P1";
+    public Animator Animator;
+    
     void Start()
     {
+        Animator = GetComponent<Animator>();
         _currentGlowingTime = GlowTime;
     }
 

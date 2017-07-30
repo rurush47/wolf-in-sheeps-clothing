@@ -6,9 +6,9 @@ public class AnimalController : MonoBehaviour {
     public Vector3 StopRotatingVector;
     public bool ControlledByPlayer = true;
     protected Vector3 _moveDirection = Vector3.zero;
-    public string Horizontal = "Horizontal_P1";
-    public string Vertical = "Vertical_P1";
-    public string AttackButton = "Jump_P1";
+    public string Horizontal = "Horizontal_1";
+    public string Vertical = "Vertical_1";
+    public string AttackButton = "Jump_1";
     public Animator Animator;
 
     private void Start()

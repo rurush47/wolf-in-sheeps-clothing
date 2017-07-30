@@ -433,7 +433,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891784543092206}
   m_LocalRotation: {x: -0.70498276, y: 0.0057562985, z: -0.005694111, w: -0.70917827}
-  m_LocalPosition: {x: 1.21, y: 10.04, z: -1.23}
+  m_LocalPosition: {x: 0, y: 10, z: -1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4173563977055190}
@@ -474,7 +474,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929063129375186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.02, y: 5.28, z: -8.04}
+  m_LocalPosition: {x: 60.2, y: 1.88, z: 2.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4122652219942524}
@@ -754,10 +754,10 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0
   m_Range: 24.05
-  m_SpotAngle: 96
+  m_SpotAngle: 119
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -789,13 +789,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e10e9c56e4622494b8cea6ff44c50794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 16
   Gravity: 20
   StopRotatingVector: {x: 0, y: 0, z: 0}
   ControlledByPlayer: 1
-  Horizontal: Horizontal_1
-  Vertical: Vertical_1
-  AttackButton: Jump_1
+  Horizontal: Horizontal_3
+  Vertical: Vertical_3
+  AttackButton: Jump_3
   Animator: {fileID: 0}
 --- !u!114 &114394995672681270
 MonoBehaviour:
@@ -809,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimalController: {fileID: 114382501409197102}
+  AttackCooldown: 2
 --- !u!137 &137109775957655802
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

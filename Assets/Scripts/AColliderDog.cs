@@ -2,36 +2,59 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AColliderDog : MonoBehaviour {
-
-	private BoxCollider _collider;
+public class AColliderDog : MonoBehaviour
+{
 	public AnimalController AnimalController;
-	private bool _attack;
-	
-	void Start ()
+	public float AttackCooldown;
+	private float _currentCooldownTimer;
+	private bool _onCooldown;
+	private AudioSource crunch;
+
+	private void Start()
 	{
-		_collider = GetComponent<BoxCollider>();
+		crunch = GetComponent<AudioSource>();
 	}
 
 	void Update () {
-		if (Input.GetButton(AnimalController.AttackButton))
+		if (_onCooldown == false)
 		{
-			_attack = true;
+			if (Input.GetButton(AnimalController.AttackButton))
+			{
+				_onCooldown = true;
+			}
+		}
+		else
+		{
+			if (_currentCooldownTimer > 0)
+			{
+				_currentCooldownTimer -= Time.deltaTime;
+			}
+			else
+			{
+				_currentCooldownTimer = AttackCooldown;
+				_onCooldown = false;
+			}
 		}
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.gameObject.CompareTag("Owca") && _attack)
+		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.AttackButton) && !_onCooldown)
 		{
+			crunch.Play();
+			//kill ship here
+			GameplayManager.Instance.SheepCount--;
 			Destroy(other.gameObject);
+
+			gameObject.GetComponentInParent<CharacterController>().Move(Vector3.forward);
 		}
 		
-		if (other.gameObject.CompareTag("Wilk") && _attack)
+		if (other.gameObject.CompareTag("Wilk") && Input.GetButton(AnimalController.AttackButton)  && !_onCooldown)
 		{
-			Destroy(other.gameObject);
+			crunch.Play();
+			Debug.Log("owca hapnięta");
+			//make obj inactive!
+			other.gameObject.SetActive(false);
 		}
-		_attack = false;
-
 	}
 }

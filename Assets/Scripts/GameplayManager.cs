@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameplayManager : Singleton<GameplayManager>
 {
 	public int SheepCount = 0;
+	public int LooseCondition;
 	public bool Day = true;
 	public float DayDuration;
 	public float ShiftDuration;
 	
 	public Light GlobalLight;
-	public Light Dog1Light;
-	public Light Dog2Light;
 
 	public List<Light> DogLights;
+	public GameObject Dog1;
 	public GameObject Dog2;
 	public GameObject Wolf1;
 	public GameObject Wolf2;
@@ -24,6 +25,8 @@ public class GameplayManager : Singleton<GameplayManager>
 	private bool _nightShift;
 	private bool _dayShift;
 
+	public Text SheepsCountText;
+
 	private void Start()
 	{
 		_currentShiftTime = ShiftDuration;
@@ -32,6 +35,8 @@ public class GameplayManager : Singleton<GameplayManager>
 
 	public void Update()
 	{
+		SheepsCountText.text = "" + SheepCount;
+		
 		if (_nightShift == true)
 		{
 			if (_currentShiftTime > 0)
@@ -98,6 +103,16 @@ public class GameplayManager : Singleton<GameplayManager>
 		{
 			SwitchToDay();
 		}
+
+		if (SheepCount < LooseCondition)
+		{
+			GameOver();
+		}
+
+		if (Wolf1.activeSelf == false /*&& Wolf2.activeSelf == false*/)
+		{
+			GameWon();
+		}
 	}
 	
 	public void AddSheep()
@@ -115,5 +130,15 @@ public class GameplayManager : Singleton<GameplayManager>
 	{
 		_dayShift = true;
 		Day = true;
+	}
+
+	public void GameOver()
+	{
+		Debug.Log("game over");
+	}
+
+	public void GameWon()
+	{
+		Debug.Log("game won");
 	}
 }
