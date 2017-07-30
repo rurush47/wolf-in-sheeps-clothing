@@ -28,6 +28,7 @@ public class SheepBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
+		GetComponent<ParticleSystem>().Stop();
 		sheepAnimator = GetComponent<Animator>();
 		sheepCotroller = GetComponent<CharacterController>();
 		sheepDirection = Quaternion.Euler(0,Random.Range(0,360),0) * transform.forward;

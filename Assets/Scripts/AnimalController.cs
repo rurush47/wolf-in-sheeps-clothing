@@ -9,6 +9,7 @@ public class AnimalController : MonoBehaviour {
     public string Horizontal = "Horizontal_1";
     public string Vertical = "Vertical_1";
     public string AttackButton = "Jump_1";
+    public string WofButton = "Wof_1";
     public Animator Animator;
 
     private void Start()

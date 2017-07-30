@@ -44,7 +44,9 @@ public class AColliderDog : MonoBehaviour
 			crunch.Play();
 			//kill ship here
 			GameplayManager.Instance.SheepCount--;
-			Destroy(other.gameObject);
+			other.gameObject.GetComponent<ParticleSystem>().Play();
+
+//			Destroy(other.gameObject);
 
 			gameObject.GetComponentInParent<CharacterController>().Move(Vector3.forward);
 		}
@@ -55,6 +57,13 @@ public class AColliderDog : MonoBehaviour
 			Debug.Log("owca hapnięta");
 			//make obj inactive!
 			other.gameObject.SetActive(false);
+		}		
+		
+		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.WofButton)  && !_onCooldown)
+		{
+			crunch.Play();
+			Debug.Log("KUUUUUTAASSSSS!!!!!");
+			other.gameObject.GetComponent<SheepBehaviour>().getBarkedAt();
 		}
 	}
 }
