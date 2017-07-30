@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4962404371024470}
   - component: {fileID: 114856094695464526}
   m_Layer: 0
-  m_Name: GameplayController
+  m_Name: IngameMenuController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

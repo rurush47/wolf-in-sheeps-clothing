@@ -16,9 +16,9 @@ public struct PlayerStruct
 public class GameController : MonoBehaviour
 {
 
-    public static GameController Instance = null;
+    public List<PlayerStruct> player_data_list;
 
-    public List<PlayerStruct> PlayersList;
+    public static GameController Instance = null;
 
     void Awake()
     {
@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+
+        player_data_list = new List<PlayerStruct>();
     }
 
     // Use this for initialization
@@ -35,7 +37,7 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Additive);
     }
     
-    public void AddPlayer(string player_name, int player_id, int player_skin_id, int team = 1)
+    public void AddPlayerData(string player_name, int player_id, int player_skin_id, int team = 1)
     {
         PlayerStruct new_player = new PlayerStruct();
 
@@ -44,7 +46,12 @@ public class GameController : MonoBehaviour
         new_player.skin = player_skin_id;
         new_player.team = team;    //0-sheep, 1-dog, 2-wolf
 
-        PlayersList.Add(new_player);
+        player_data_list.Add(new_player);
+    }
+
+    public void ResetGame()
+    {
+        player_data_list.Clear();
     }
 
 }

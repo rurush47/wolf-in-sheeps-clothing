@@ -3,7 +3,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameplayController : MonoBehaviour
+public class IngameMenuController : MonoBehaviour
 {
 
     public GameObject IngameMenu;

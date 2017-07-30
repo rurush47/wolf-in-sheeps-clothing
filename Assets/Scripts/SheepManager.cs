@@ -14,16 +14,15 @@ public class SheepManager : MonoBehaviour
 	{
 		for (int i = 0; i < sheepCount; i++)
 		{
-			Instantiate(sheepPrefab,
+            GameObject new_sheep = Instantiate(sheepPrefab,
 				new Vector3(Random.Range(-50.0f, 50.0f), 0, Random.Range(-50.0f, 50.0f)),
 				Quaternion.Euler(0.0f, Random.Range(0, 360), 0.0f));
-		}
+
+            GameplayManager.Instance.Sheeps.Add(new_sheep);
+
+        }
 
 		GameplayManager.Instance.SheepCount += sheepCount;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
