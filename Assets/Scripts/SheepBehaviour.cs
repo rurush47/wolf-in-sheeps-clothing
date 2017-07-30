@@ -13,6 +13,8 @@ public class SheepBehaviour : MonoBehaviour
 	public Vector3 islandCenter;
 	public float baseSheepSpeed;
 	public float sheepSpeed = 1.0f;
+
+    public int sheep_id;
 	
 	
 	public float minDirChangeTime = 0.5f;
@@ -29,6 +31,7 @@ public class SheepBehaviour : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
+		//GetComponent<ParticleSystem>().Stop();
 		sheepAnimator = GetComponent<Animator>();
 		sheepCotroller = GetComponent<CharacterController>();
 		sheepDirection = Quaternion.Euler(0,Random.Range(0,360),0) * transform.forward;
@@ -87,8 +90,9 @@ public class SheepBehaviour : MonoBehaviour
 		{
 			transform.localScale = transform.localScale - new Vector3(0.05f, 0.05f, 0.05f);
 			yield return null;
-		}
-	}
+        }
+        GameplayManager.Instance.Sheeps.Remove(gameObject);
+    }
 	
 	public void getBarkedAt()
 	{
@@ -104,6 +108,14 @@ public class SheepBehaviour : MonoBehaviour
 		StopAllCoroutines();
 		StartCoroutine(Die());
 	}
+
+    public void OnDestroy()
+    {
+        // stop being tracked by camera
+        //CameraController.Instance.RemoveTarget(gameObject.transform);
+        // unregister from the list of active characters
+        //GameplayManager.Instance.Sheeps.Remove(gameObject);
+    }
 
 }
 

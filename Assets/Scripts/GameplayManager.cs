@@ -40,6 +40,20 @@ public class GameplayManager : Singleton<GameplayManager>
 
 	private bool _gameOver;
 
+    public List<string> nightly_memorials;
+
+    public static GameplayManager Instance = null;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+
+        nightly_memorials.Clear();
+    }
+
 	private void Start()
 	{
 
@@ -192,4 +206,19 @@ public class GameplayManager : Singleton<GameplayManager>
 	{
 		SheepCount--;
 	}
+
+    private IEnumerator DisplayMemorials()
+    {
+        foreach (string memorial in nightly_memorials)
+        {
+            MemorialCanvasController.Instance.current_memorial_text = memorial;
+            MemorialCanvasController.Instance.ToggleMenu();
+            yield return new WaitForSeconds(0.2f);
+        }
+	    
+	    nightly_memorials.Clear();
+    }
+
+
+
 }
