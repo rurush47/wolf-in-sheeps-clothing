@@ -13,6 +13,8 @@ public class SheepBehaviour : MonoBehaviour
 	public Vector3 islandCenter;
 	public float baseSheepSpeed;
 	public float sheepSpeed = 1.0f;
+
+    public int sheep_id;
 	
 	
 	public float minDirChangeTime = 0.5f;

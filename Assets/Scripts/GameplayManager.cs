@@ -35,6 +35,8 @@ public class GameplayManager : MonoBehaviour
 	public Sprite WinSprite;
 	public Sprite LooseSprite;
 
+    public List<string> nightly_memorials;
+
     public static GameplayManager Instance = null;
 
     void Awake()
@@ -43,6 +45,8 @@ public class GameplayManager : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+
+        nightly_memorials.Clear();
     }
 
     private void Start()
@@ -92,7 +96,11 @@ public class GameplayManager : MonoBehaviour
 			{
 				_nightShift = false;
 				_currentShiftTime = ShiftDuration;
-			}
+
+                // END of the NIGHT
+                StartCoroutine(DisplayMemorials());
+
+            }
 		}
 		
 		if (_dayShift == true)
@@ -200,4 +208,16 @@ public class GameplayManager : MonoBehaviour
 		PopUp.sprite = sprite;
 		PopUp.gameObject.SetActive(true);
 	}
+
+    private IEnumerator DisplayMemorials()
+    {
+        foreach (string memorial in nightly_memorials)
+        {
+            MemorialCanvasController.Instance.current_memorial_text = memorial;
+            MemorialCanvasController.Instance.ToggleMenu();
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+
 }

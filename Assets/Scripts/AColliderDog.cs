@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AColliderDog : MonoBehaviour
 {
+
+    // DOG
+
 	public AnimalController AnimalController;
 	public float AttackCooldown;
 	private float _currentCooldownTimer;
@@ -41,15 +44,22 @@ public class AColliderDog : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
+        // BITE SHEEP
 		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.AttackButton) && !_onCooldown)
 		{
 			crunch.clip = crunchSound; 
 			crunch.Play();
-			//kill ship here
-//			Destroy(other.gameObject);
-			other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
+            //kill ship here
+            //			Destroy(other.gameObject);
+
+            // write memo about sheep
+            int sheep_id = other.gameObject.GetComponent<SheepBehaviour>().sheep_id;
+            GameplayManager.Instance.nightly_memorials.Add(SheepManager.Instance.bios_dog[sheep_id]);
+
+            other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
 		}
 		
+        // BITE WOLF
 		if (other.gameObject.CompareTag("Wilk") && Input.GetButton(AnimalController.AttackButton)  && !_onCooldown)
 		{
 			crunch.Play();
@@ -58,6 +68,7 @@ public class AColliderDog : MonoBehaviour
             other.gameObject.SetActive(false);
 		}
 		
+        // BARK
 		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.WofButton)  && !_onCooldown)
 		{
 			crunch.clip = wofSound;

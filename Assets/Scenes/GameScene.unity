@@ -5256,6 +5256,106 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300070, guid: 2f41ac80e2d035746bb4b70839671a59, type: 3}
+--- !u!1001 &1448398582
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224969061915757950, guid: aa62bb3b8af51c74e969afe18b6689f8,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: aa62bb3b8af51c74e969afe18b6689f8, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1465465673
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,6 +6675,7 @@ MonoBehaviour:
   PopUp: {fileID: 1959102294}
   WinSprite: {fileID: 21300000, guid: 209115a2a19351e4dbfe947bc4d2b2e0, type: 3}
   LooseSprite: {fileID: 21300000, guid: b7b670b8f28f66c4c9856351e78c7f7c, type: 3}
+  nightly_memorials: []
 --- !u!4 &1802821343
 Transform:
   m_ObjectHideFlags: 0

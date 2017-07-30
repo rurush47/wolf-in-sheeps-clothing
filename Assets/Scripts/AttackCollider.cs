@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class AttackCollider : MonoBehaviour
 {
+
+    // WOLF
+
 	public Wolf AnimalController;
 	public float AttackCooldown;
 	private float _currentCooldownTimer;
@@ -43,7 +46,12 @@ public class AttackCollider : MonoBehaviour
 		    !GameplayManager.Instance.Day)
 		{
 			GetComponent<AudioSource>().Play();
-			other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
+
+            // write memo about sheep
+            int sheep_id = other.gameObject.GetComponent<SheepBehaviour>().sheep_id;
+            GameplayManager.Instance.nightly_memorials.Add(SheepManager.Instance.bios_wolf[sheep_id]);
+            
+            other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
 			AnimalController.EyesOn();
 		}
 		_attack = false;
