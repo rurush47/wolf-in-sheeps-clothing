@@ -386,6 +386,26 @@ Prefab:
       propertyPath: m_FirstSelected
       value: 
       objectReference: {fileID: 1991835876}
+    - target: {fileID: 114172761579392236, guid: 1240c515b7c44c2488297e3c03adc21b,
+        type: 2}
+      propertyPath: m_HorizontalAxis
+      value: Horizontal
+      objectReference: {fileID: 0}
+    - target: {fileID: 114172761579392236, guid: 1240c515b7c44c2488297e3c03adc21b,
+        type: 2}
+      propertyPath: m_VerticalAxis
+      value: Vertical
+      objectReference: {fileID: 0}
+    - target: {fileID: 114172761579392236, guid: 1240c515b7c44c2488297e3c03adc21b,
+        type: 2}
+      propertyPath: m_SubmitButton
+      value: Submit
+      objectReference: {fileID: 0}
+    - target: {fileID: 114172761579392236, guid: 1240c515b7c44c2488297e3c03adc21b,
+        type: 2}
+      propertyPath: m_CancelButton
+      value: Cancel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1240c515b7c44c2488297e3c03adc21b, type: 2}
   m_IsPrefabParent: 0
