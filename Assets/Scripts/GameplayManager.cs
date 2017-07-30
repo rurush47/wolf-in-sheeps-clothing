@@ -27,6 +27,10 @@ public class GameplayManager : Singleton<GameplayManager>
 
 	public Text SheepsCountText;
 
+	public Image PopUp;
+	public Sprite WinSprite;
+	public Sprite LooseSprite;
+
 	private void Start()
 	{
 		_currentShiftTime = ShiftDuration;
@@ -135,10 +139,30 @@ public class GameplayManager : Singleton<GameplayManager>
 	public void GameOver()
 	{
 		Debug.Log("game over");
+		//Pause();
 	}
 
 	public void GameWon()
 	{
 		Debug.Log("game won");
+		ShowPopup(WinSprite);
+		Pause();
+	}
+
+	public void Pause()
+	{
+		Time.timeScale = 0;
+	}
+	
+	public void UnPause()
+	{
+		Time.timeScale = 1;
+	}
+
+	public void ShowPopup(Sprite sprite)
+	{
+		PopUp.sprite = sprite;
+		PopUp.gameObject.SetActive(true);
+		PopUp.SetNativeSize();
 	}
 }
