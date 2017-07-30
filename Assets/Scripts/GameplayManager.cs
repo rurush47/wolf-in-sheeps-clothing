@@ -10,6 +10,7 @@ public class GameplayManager : Singleton<GameplayManager>
 	public bool Day = true;
 	public float DayDuration;
 	public float ShiftDuration;
+	public float LightIntensity;
 	
 	public Light GlobalLight;
 
@@ -67,7 +68,7 @@ public class GameplayManager : Singleton<GameplayManager>
 		{
 			if (_currentShiftTime > 0)
 			{
-				GlobalLight.intensity = Mathf.Lerp(0, 1, _currentShiftTime / ShiftDuration);
+				GlobalLight.intensity = Mathf.Lerp(0, LightIntensity, _currentShiftTime / ShiftDuration);
 				foreach (var light in DogLights)
 				{
 					light.intensity = Mathf.Lerp(8, 0, _currentShiftTime / ShiftDuration);
@@ -86,7 +87,7 @@ public class GameplayManager : Singleton<GameplayManager>
 		{
 			if (_currentShiftTime > 0)
 			{
-				GlobalLight.intensity = Mathf.Lerp(1, 0, _currentShiftTime / ShiftDuration);
+				GlobalLight.intensity = Mathf.Lerp(LightIntensity, 0, _currentShiftTime / ShiftDuration);
 				foreach (var light in DogLights)
 				{
 					light.intensity = Mathf.Lerp(0, 8, _currentShiftTime / ShiftDuration);
@@ -161,7 +162,8 @@ public class GameplayManager : Singleton<GameplayManager>
 	public void GameOver()
 	{
 		Debug.Log("game over");
-		//Pause();
+		ShowPopup(LooseSprite);
+		Pause();
 	}
 
 	public void GameWon()

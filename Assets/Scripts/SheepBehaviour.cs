@@ -8,6 +8,7 @@ public class SheepBehaviour : MonoBehaviour
 	private Vector3 sheepDirection;
 	private CharacterController sheepCotroller;
 	private Animator sheepAnimator;
+	public float Gravity;
 
 	public Vector3 islandCenter;
 	public float baseSheepSpeed;
@@ -40,7 +41,9 @@ public class SheepBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		sheepCotroller.SimpleMove(sheepDirection*sheepSpeed);
+		Vector3 moveVec = sheepDirection * sheepSpeed;
+		moveVec.y -= Gravity * Time.deltaTime;
+		sheepCotroller.SimpleMove(moveVec);
 	}
 
 
@@ -96,11 +99,10 @@ public class SheepBehaviour : MonoBehaviour
 
 	public void DieBitch()
 	{
+		GameplayManager.Instance.SheepCount--;
 		StopAllCoroutines();
 		StartCoroutine(Die());
 	}
-	
-	
 
     public void OnDestroy()
     {
