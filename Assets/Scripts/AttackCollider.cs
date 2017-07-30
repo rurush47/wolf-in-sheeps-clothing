@@ -42,10 +42,11 @@ public class AttackCollider : MonoBehaviour
 		if (other.gameObject.CompareTag("Owca") && Input.GetButton(AnimalController.AttackButton) && !_onCooldown &&
 		    !GameplayManager.Instance.Day)
 		{
+			other.enabled = false;
 			GetComponent<AudioSource>().Play();
 			other.gameObject.GetComponent<SheepBehaviour>().DieBitch();
 			AnimalController.EyesOn();
 		}
-		_attack = false;
+		_onCooldown = true;
 	}
 }

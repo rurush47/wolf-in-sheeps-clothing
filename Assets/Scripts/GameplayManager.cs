@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameplayManager : Singleton<GameplayManager>
@@ -11,8 +12,10 @@ public class GameplayManager : Singleton<GameplayManager>
 	public float DayDuration;
 	public float ShiftDuration;
 	public float LightIntensity;
+	public float DirectionalLightIntensity = 0.12f;
 	
 	public Light GlobalLight;
+	public Light DirectionalLight;
 
 	public List<Light> DogLights;
 	public GameObject Dog1;
@@ -32,8 +35,15 @@ public class GameplayManager : Singleton<GameplayManager>
 	public Sprite WinSprite;
 	public Sprite LooseSprite;
 
+	[Range(0.0f, 10.0f)] 
+	public float ambientLightIntensity = 2.0f;
+
+	private bool _gameOver;
+
 	private void Start()
 	{
+
+		RenderSettings.ambientIntensity = ambientLightIntensity;
 		_currentShiftTime = ShiftDuration;
 		_currentDayTime = DayDuration;
 	}
@@ -47,6 +57,8 @@ public class GameplayManager : Singleton<GameplayManager>
 			if (_currentShiftTime > 0)
 			{
 				GlobalLight.intensity = Mathf.Lerp(0, LightIntensity, _currentShiftTime / ShiftDuration);
+				DirectionalLight.intensity = Mathf.Lerp(0, DirectionalLightIntensity, _currentShiftTime / ShiftDuration);
+				RenderSettings.ambientIntensity = Mathf.Lerp(0, ambientLightIntensity, _currentShiftTime / ShiftDuration);
 				foreach (var light in DogLights)
 				{
 					light.intensity = Mathf.Lerp(8, 0, _currentShiftTime / ShiftDuration);
@@ -66,6 +78,8 @@ public class GameplayManager : Singleton<GameplayManager>
 			if (_currentShiftTime > 0)
 			{
 				GlobalLight.intensity = Mathf.Lerp(LightIntensity, 0, _currentShiftTime / ShiftDuration);
+				DirectionalLight.intensity = Mathf.Lerp(DirectionalLightIntensity, 0, _currentShiftTime / ShiftDuration);
+				RenderSettings.ambientIntensity = Mathf.Lerp(ambientLightIntensity, 0, _currentShiftTime / ShiftDuration);
 				foreach (var light in DogLights)
 				{
 					light.intensity = Mathf.Lerp(0, 8, _currentShiftTime / ShiftDuration);
@@ -118,6 +132,11 @@ public class GameplayManager : Singleton<GameplayManager>
 		{
 			GameWon();
 		}
+
+		if (_gameOver && Input.GetKeyDown(KeyCode.S))
+		{
+			SceneManager.LoadSceneAsync("MainMenu");
+		}		
 	}
 	
 	public void AddSheep()
@@ -142,6 +161,7 @@ public class GameplayManager : Singleton<GameplayManager>
 		Debug.Log("game over");
 		ShowPopup(LooseSprite);
 		Pause();
+		_gameOver = true;
 	}
 
 	public void GameWon()
@@ -149,6 +169,7 @@ public class GameplayManager : Singleton<GameplayManager>
 		Debug.Log("game won");
 		ShowPopup(WinSprite);
 		Pause();
+		_gameOver = true;
 	}
 
 	public void Pause()
@@ -165,5 +186,10 @@ public class GameplayManager : Singleton<GameplayManager>
 	{
 		PopUp.sprite = sprite;
 		PopUp.gameObject.SetActive(true);
+	}
+
+	public void DecreaseSheepCount()
+	{
+		SheepCount--;
 	}
 }

@@ -98,7 +98,9 @@ public class SheepBehaviour : MonoBehaviour
 
 	public void DieBitch()
 	{
-		GameplayManager.Instance.SheepCount--;
+		Debug.Log("kaczka");
+		GetComponent<BoxCollider>().enabled = false;
+		GameplayManager.Instance.DecreaseSheepCount();
 		StopAllCoroutines();
 		StartCoroutine(Die());
 	}
